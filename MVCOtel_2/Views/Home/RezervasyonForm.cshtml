@@ -1,0 +1,39 @@
+﻿@model MVCOtel_2.Models.RezervasyonModel
+@{
+    ViewBag.Title = "Rezervasyon Form";
+}
+
+<h2>Rezervasyon Form</h2>
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(x => x.OdaID)
+    @Html.HiddenFor(x => x.UserID)
+
+    <div>
+        <label>Giriş Tarihi</label>
+        <input class="datepicker" name="GirisTarih"/>
+    </div>
+
+    <div>
+        <label>Çıkış Tarihi</label>
+        <input class="datepicker" name="CikisTarih" />
+    </div>
+
+    <div>
+        <label>Kişi sayısı</label>
+        <select name="KacKisi">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+    </div>
+    <div>
+        <label>Fiyat:</label> <span>@ViewBag.OdaFiyat</span>
+    </div>
+    <input type="submit" value="KAYDET" />
+    <div class="hatalar">
+        @Html.ValidationSummary()
+    </div>
+}

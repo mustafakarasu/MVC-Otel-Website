@@ -1,0 +1,18 @@
+﻿@model IEnumerable<MVCOtel_2.Models.OdaModel>
+@{
+    ViewBag.Title = "Oda Listele";
+}
+<h2>Oda Listele</h2>
+<a href="/Yonetim/OdaEkle">Oda Ekle</a>
+@if(Model != null)
+{
+    foreach (var item in Model)
+    {
+        <p>
+            <span>@item.Baslik</span>
+            <a href="/Yonetim/OdaDuzenle/@item.OdaModelID">Düzenle</a>
+            <a href="/Yonetim/OdaSil/@item.OdaModelID">Sil</a>
+        </p>
+    }
+}
+

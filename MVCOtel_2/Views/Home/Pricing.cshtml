@@ -1,0 +1,32 @@
+﻿@model IEnumerable<MVCOtel_2.Models.OdaModel>
+<section id="pricing">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title wow fadeInDown">Odalar</h2>
+            <p class="wow fadeInDown">Odalar hakkında kısa bir tanıtım yazısı.</p>
+        </div>
+        <div class="row">
+            @if (Model != null)
+            {
+                foreach (var item in Model)
+                {
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="wow zoomIn" data-wow-duration="400ms" data-wow-delay="0ms">
+                            <ul class="pricing">
+                                <li class="plan-header">
+                                    <img src="~/Content/oda/@item.ResimURL" width="215" height="100" />
+                                </li>
+                                <li><strong>@item.Baslik</strong></li>
+                                <li>@item.Fiyat</li>
+                                <li>@item.m2</li>
+
+                                <li class="plan-purchase"><a class="btn btn-primary" href="/Home/Rezervasyon/@item.OdaModelID">Rezervasyon</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                }
+            }
+         
+        </div>
+    </div>
+</section><!--/#pricing-->

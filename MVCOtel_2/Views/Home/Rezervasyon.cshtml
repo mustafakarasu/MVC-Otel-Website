@@ -1,0 +1,36 @@
+﻿@model MVCOtel_2.Models.OdaModel
+@{
+    ViewBag.Title = "Rezervasyon";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section class="demo-2">
+    <div class="container">
+        <h2>Rezervasyon</h2>
+
+        <div class="col-md-6">
+            <img src="~/Content/oda/@Model.ResimURL" width="300"/>
+            <p>@Model.Baslik</p>
+            <p>Metrekare: @Model.m2</p>
+            <p>Fiyat: @Model.Fiyat</p>
+        </div>
+
+        <div class="col-md-6">
+            @Html.Action("RezervasyonForm")
+        </div>
+    </div>
+</section>
+
+@section bizimscript{
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    @*jquery (ui olmayanı) ve style linklerini sil.*@
+    
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>        
+        $( function () {
+            $(".datepicker").datepicker({ dateFormat: "yy-mm-dd"}); //DB'ye bu formatta gitsin.
+        });
+    </script>
+}
+
+@*_Layout kısmında RenderSection dediğimiz yere yerleşecek. section istediğin yerde tanımla.*@
+

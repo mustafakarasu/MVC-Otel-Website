@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Yönetim";
+    //Layout = "~/Views/Shared/_Layout.cshtml";    
+}
+<section id="pricing">
+    <div class="container">
+        <h2>Yönetim Paneli</h2>
+
+        @if (Request.IsAuthenticated) //Giriş yaptıysa
+        {
+            if (User.IsInRole("Admin"))
+            {
+                //Admin sayfası
+                <a href="/Yonetim/SliderListe">Slider Yönet</a>
+                <a href="/Yonetim/OdaListele">Oda Yönet</a>
+                <a href="/Yonetim/GaleriListele">Galeri Yönet</a>
+            }
+            else
+            {
+                <h1>Bu alana girme yetkiniz yok.</h1>
+                <a href="/">Anasayfaya dön</a>
+            }
+        }
+        else
+        {
+            @Html.Action("Login", "Account");
+        }
+    </div>
+</section>

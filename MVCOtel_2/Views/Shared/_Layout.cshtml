@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="webthemez">
+    <title>@ViewBag.Title</title>
+    <!-- core CSS -->
+    <link href="/Content/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/Content/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/Content/css/animate.min.css" rel="stylesheet">
+    <link href="/Content/css/prettyPhoto.css" rel="stylesheet">
+    <link href="/Content/css/styles.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/Content/css/slider-style.css" />
+    <link rel="stylesheet" type="text/css" href="/Content/css/slider-custom.css" />
+    <script type="text/javascript" src="/Content/js/modernizr.custom.79639.js"></script>
+    <!--[if lt IE 9]>
+    <script src="/Content/js/html5shiv.js"></script>
+    <script src="/Content/js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="/Content/images/ico/favicon.ico">
+    @RenderSection("Scripts",false)
+</head>
+<body id="home">
+    <header id="header">
+        <nav id="main-nav" class="navbar navbar-default navbar-fixed-top" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><img src="/Content/images/logo.png" alt="logo"></a>
+                </div>
+
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li class="scroll active"><a href="/Home/Index#home">Home</a></li>
+                        <li class="scroll"><a href="/Home/Index#services">Services</a></li>
+                        <li class="scroll"><a href="/Home/Index#about">About</a></li>
+                        <li class="scroll"><a href="/Home/Index#our-team">Our Team</a></li>
+                        <li class="scroll"><a href="/Home/Index#portfolio">Portfolio</a></li>
+                        <li class="scroll"><a href="/Home/Index#pricing">Pricing</a></li>
+                        <li class="scroll"><a href="/Home/Index#contact-us">Contact</a></li>
+
+                        @*Home, services... yerleri parça şeklinde HomeControllerdaki Index içerisinde*@
+                        @*Farklı adresteki bir bölüme gitmek için <a name=""> ile belirtilen <a href="adres#nameismi"> *@
+                    </ul>
+
+                    @Html.Partial("_LoginPartial")
+                </div>
+            </div><!--/.container-->
+        </nav><!--/nav-->
+    </header><!--/header-->
+
+    @RenderBody() @*Buradaki kısmı Index sayfasına aktardık. Ve burada çıkması için RenderBody*@
+
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    &copy; 2015 Company Name. Template by <a target="_blank" href="http://webthemez.com/" title="Free Bootstrap Themes and HTML Templates">WebThemez.com</a>
+                </div>
+                <div class="col-sm-6">
+                    <ul class="social-icons">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                        <li><a href="#"><i class="fa fa-github"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer><!--/#footer-->
+    <script src="/Content/js/jquery.js"></script>
+    <script src="/Content/js/bootstrap.min.js"></script>
+    <script src="/Content/js/mousescroll.js"></script>
+    <script src="/Content/js/smoothscroll.js"></script>
+    <script src="/Content/js/jquery.prettyPhoto.js"></script>
+    <script src="/Content/js/jquery.isotope.min.js"></script>
+    <script src="/Content/js/jquery.inview.min.js"></script>
+    <script src="/Content/js/wow.min.js"></script>
+    <script type="text/javascript" src="/Content/js/jquery.ba-cond.min.js"></script>
+    <script type="text/javascript" src="/Content/js/jquery.slitslider.js"></script>
+    <script type="text/javascript" src="/Content/js/slitslider-custom.js"></script>
+    <script src="/Content/js/custom-scripts.js"></script>
+
+    @RenderSection("bizimscript",false)
+</body>
+</html>

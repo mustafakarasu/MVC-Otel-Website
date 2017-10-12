@@ -1,0 +1,26 @@
+﻿@model MVCOtel_2.Models.GaleriModel
+@{
+    ViewBag.Title = "Galeri Ekle";
+}
+
+<h2>Galeri Ekle</h2>
+
+@using (Html.BeginForm("GaleriEkle","Yonetim",FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+    <div class="satir">
+        @Html.LabelFor(x => x.BaslikGaleri)
+        @Html.TextBoxFor(x => x.BaslikGaleri)
+    </div>
+
+    <div class="satir">
+        @Html.LabelFor(x => x.ResimYoluGaleri)
+        <input name="galeriResim" type="file"/>
+    </div>
+
+    <div class="hatalar">
+        @Html.ValidationSummary()
+    </div>
+
+    <input type="submit" value="KAYDET"/>
+}
+

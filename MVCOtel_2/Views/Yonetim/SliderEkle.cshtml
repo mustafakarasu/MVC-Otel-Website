@@ -1,0 +1,37 @@
+﻿@model MVCOtel_2.Models.SliderModel
+@{
+    ViewBag.Title = "Slider Ekle";
+}
+
+<h2>Slider Ekle</h2>
+
+@*<form method="post" enctype="multipart/form-data"></form>*@
+
+@using (Html.BeginForm("SliderEkle","Yonetim",FormMethod.Post, new { enctype = "multipart/form-data" })) //Parantezler açılıp kapanıyor.
+{
+    <div class="satir">
+        @*<label>Resim:</label>
+        <input type="file" name="resim"/> -- HttpPostedFileBase ile name aynı*@
+         
+        @Html.LabelFor(x => x.ResimYolu)
+        <input type="file" name="resim"/>  
+           
+        <input type="hidden" name="ResimYolu" value="yok.jpg"/> 
+    </div>
+
+    <div class="satir">
+        @*<label>Sıra</label>
+        <input type="number" name="Sira"/>  -- Normalde yapsak böyle.*@
+
+        @Html.LabelFor(x => x.Sira)
+        @Html.TextBoxFor(x => x.Sira, new { @type = "number"})
+    </div>
+
+    <div>
+        <input type="submit" value="KAYDET"/> @*Buton böyle. Oluşturan birşey yok.*@
+    </div>
+
+    <div>
+        @Html.ValidationSummary()
+    </div>
+}
